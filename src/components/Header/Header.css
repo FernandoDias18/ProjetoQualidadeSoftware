@@ -55,7 +55,14 @@ textarea:focus, input:focus{
     font-weight: bold;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    word-wrap:break-word;
+    overflow:hidden
 }
+button.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
 .inputs button:hover{
 
