@@ -12,15 +12,15 @@ export function Question({questionTitle,index}){
                     
                 <label required="" className="radio-inline" for="radios-0" >
                   <input name="resposta" id="resposta" value="sim" type="radio" required/>
-                  sim
+                  Sim
                 </label> 
                 <label for="radios-1" className="radio-inline">
                   <input name="resposta" id="resposta" value="não" type="radio"/>
-                  não
+                  Não
                 </label>
                 <label for="radios-0" className="radio-inline">
                   <input name="resposta" id="resposta" value="não se aplica" type="radio"/>
-                  não se aplica
+                  Não se aplica
                 </label>
                     
                  
