@@ -1,32 +1,31 @@
 
-
-export function Question(){
+import './Question.css'
+export function Question({questionTitle,index}){
     return(
         <>
           <div className="container-question">
-              <span>id</span>
-              <span>Titulo da pergunda</span>
-              <div class="form-group"></div>
-                  <label  for="radios">resposta <h11>*</h11>
-                    <div> 
+              <span className='id-Question'>id</span>
+              <span className='Question-title'>{questionTitle}</span>
+              <div class="form-group">
+                  
+                
                     
-                      <label required="" class="radio-inline" for="radios-0" >
-                        <input name="resposta" id="resposta" value="sim" type="radio" required/>
-                        sim
-                      </label> 
-                      <label for="radios-1">
-                        <input name="resposta" id="resposta" value="não" type="radio"/>
-                        não
-                      </label>
-                      <label for="radios-0">
-                        <input name="resposta" id="resposta" value="não se aplica" type="radio"/>
-                        não se aplica
-                      </label>
-
-                    </div>
-                  </label>
+                <label required="" className="radio-inline" for="radios-0" >
+                  <input name="resposta" id="resposta" value="sim" type="radio" required/>
+                  Sim
+                </label> 
+                <label for="radios-1" className="radio-inline">
+                  <input name="resposta" id="resposta" value="não" type="radio"/>
+                  Não
+                </label>
+                <label for="radios-0" className="radio-inline">
+                  <input name="resposta" id="resposta" value="não se aplica" type="radio"/>
+                  Não se aplica
+                </label>
                     
-              </div>
+                 
+              </div>  
+          </div>
         </>
     )
 }
