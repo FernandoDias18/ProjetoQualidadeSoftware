@@ -1,6 +1,6 @@
 import { Modal as ModalComponent, Button } from "antd"
 import  'antd/dist/antd.min.css'
-import { useModalContext } from "./modal.context"
+import { useModalContext } from "../../Context"
 
 export function Modal(){
 
