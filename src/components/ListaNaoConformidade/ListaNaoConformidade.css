@@ -1,0 +1,22 @@
+.Nao-Conformidade-Conteiner{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    border-bottom: 3px solid #fff;
+   
+}
+
+/* com a função :not(:last-child) tu consegue aplicar o css para todos os elementos menos o ultimo elemento....no caso para todas as div que são filhas do Nao-Conformidade-Conteiner ele aplicará os efeitos, menos para a ultia div  */
+.Nao-Conformidade-Conteiner div:not(:last-child) {
+  
+    color: blue;
+    margin-right: 100px;
+    min-width: 250px;
+    max-width: 250px;
+   
+}
+
+.Botao-Mais-Detalhes{
+   
+}
+

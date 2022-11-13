@@ -1,0 +1,28 @@
+.Conteiner-Tabela-Monitoramento{
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 25px;
+    
+   
+}
+
+.Conteiner-cabecalho{
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #000;
+  
+   
+}
+ /* com a função :not(:last-child) tu consegue aplicar o css para todos os elementos menos o ultimo elemento....no caso para todas as div que são filhas  */
+.Conteiner-cabecalho div:not(:last-child){
+  
+    color: black;
+    width: 250px;
+    margin-right: 100px;
+}
+.Data-De-Resolucao{
+}
