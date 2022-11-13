@@ -1,13 +1,14 @@
 import { Header } from "./components/Header/Header";
-import {List} from "./components/List/List"
+// import {List} from "./components/List/List"
 import { ModalProvider } from "./Context";
-import {ModalCadastroNaoCof} from './components/ModalCadastroNaoCof/ModalCadastroNaoCof.jsx'
+// import {ModalCadastroNaoCof} from './components/ModalCadastroNaoCof/ModalCadastroNaoCof.jsx'
+import {MonitoramentoNaoConformidade} from './components/MonitoramentoNaoConformidade/MonitoramentoNaoConformidade'
 
 
 
 import './App.css'
-import { Modal } from "./components/ModalNaoConformidade/Modal";
-import { Calendario } from "./components/Calendario/Calendario";
+// import { Modal } from "./components/ModalNaoConformidade/Modal";
+// import { Calendario } from "./components/Calendario/Calendario";
 
 
 
@@ -17,13 +18,8 @@ function App() {
         <>
         <ModalProvider>
           <Header/>
-          <List/>
           
-          <Modal/>
-
-          <Calendario/>
-
-          <ModalCadastroNaoCof/>
+          <MonitoramentoNaoConformidade/>
         </ModalProvider>
         
         </>
