@@ -1,8 +1,8 @@
 import { Header } from "./components/Header/Header";
 import {List} from "./components/List/List"
-import {ModalProvider, } from './components/ModalNaoConformidade/modal.context'
+import { ModalProvider } from "./Context";
 import {ModalCadastroNaoCof} from './components/ModalCadastroNaoCof/ModalCadastroNaoCof.jsx'
-import{ModalProviderNaoConformidade} from './components/ModalCadastroNaoCof/ModalCadastroNaoCof.context'
+
 
 
 import './App.css'
@@ -15,7 +15,6 @@ function App() {
 
   return (
         <>
-        <ModalProviderNaoConformidade>
         <ModalProvider>
           <Header/>
           <List/>
@@ -26,7 +25,7 @@ function App() {
 
           <ModalCadastroNaoCof/>
         </ModalProvider>
-        </ModalProviderNaoConformidade>
+        
         </>
   );
 }
