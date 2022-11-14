@@ -1,7 +1,9 @@
 import { Header } from "./components/Header/Header";
+
 import {List} from "./components/List/List"
 // import { ModalProvider } from "./Context";
 // import {ModalCadastroNaoCof} from './components/ModalCadastroNaoCof/ModalCadastroNaoCof.jsx'
+
 
 import {Flex} from '@chakra-ui/react'
 import SideBar from './components/SideBar/SideBar';
@@ -24,11 +26,6 @@ function App() {
               <List/>
             </Flex>
           </Flex>
-          
-          
-          
-          
-          
         
         </>
   );
