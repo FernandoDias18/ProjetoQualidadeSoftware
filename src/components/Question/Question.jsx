@@ -56,7 +56,7 @@ export function Question({questionTitle,index,editandoQuestao ,editarQuestao, id
 
               }
               <dir>
-                <button onClick={()=>editarQuestao(id)}> Editar</button>
+                <button classname='editarbutton' onClick={()=>editarQuestao(id)}> Editar</button>
               </dir>
               
             <div className="Respostas">

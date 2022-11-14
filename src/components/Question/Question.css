@@ -18,6 +18,7 @@
     margin-left: 40px;
     margin-right: 20px;
     max-width: 90%;
+    overflow: hidden;
 }
 .container-question:hover{
     background-color: #97b7b9;
@@ -35,14 +36,23 @@
     font-size: 14px;
     font-weight: 520;
     color: #343434;
-    width: 800px;
+    width: 600px;
+    max-width: 600px;
     word-wrap:break-word;
+    margin-left: 10px;
 }
 
 
 .Respostas{
     margin-right: 15px;
+    margin-left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
+.editarbutton {
+    background-color: red;
+    margin-right: 10px;
 }
 
 .RespostaNaoSeAplica{
@@ -52,12 +62,19 @@
     width: 100px; /*Width of select dropdown to give space for arrow image*/
     text-indent: 0.01px; /* Removes default arrow from firefox*/
     text-overflow: "";
-    color: #000;
+    color: rgb(247, 247, 247);
     border-radius: 5px;
     padding: 5px;
-    box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
-    background-color:#FE7C00;
-    
+    text-align: center;
+    align-items: center;
+    background-color:#ff9e1e;
+}
+
+.RespostaNaoSeAplica:focus {
+    outline: 0;
+}
+.RespostaNaoSeAplica:hover {
+    cursor: pointer;
 }
 
 .RespostaNaoConforme{
@@ -67,13 +84,22 @@
     width: 100px; /*Width of select dropdown to give space for arrow image*/
     text-indent: 0.01px; /* Removes default arrow from firefox*/
     text-overflow: "";
-    color: white;
+    color: rgb(247, 247, 247);
     border-radius: 5px;
     padding: 5px;
-    box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
-    background-color: red;
-    
+    text-align: center;
+    align-items: center;
+    background-color: rgb(255, 50, 50);
+    text-shadow: none;
 }
+
+.RespostaNaoConforme:focus {
+    outline: 0;
+}
+.RespostaNaoConforme:hover {
+    cursor: pointer;
+}
+
 .RespostaOk{
     border: 0 !important;  /*Removes border*/
     -webkit-appearance: none;  /*Removes default chrome and safari style*/
@@ -81,13 +107,23 @@
     width: 100px; /*Width of select dropdown to give space for arrow image*/
     text-indent: 0.01px; /* Removes default arrow from firefox*/
     text-overflow: "";
-    color: #000;
+    color: rgb(247, 247, 247);
     border-radius: 5px;
     padding: 5px;
-    box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
     background-color: rgb(53, 148, 53);
-    
 }
+
+.RespostaOk:focus {
+    outline: 0;
+}
+.RespostaOk:hover {
+    cursor: pointer;
+}
+
 .Resposta{
     border: 0 !important;  /*Removes border*/
     -webkit-appearance: none;  /*Removes default chrome and safari style*/
@@ -95,14 +131,20 @@
     width: 100px; /*Width of select dropdown to give space for arrow image*/
     text-indent: 0.01px; /* Removes default arrow from firefox*/
     text-overflow: "";
-    color: #000;
+    color: rgb(247, 247, 247);
     border-radius: 5px;
     padding: 5px;
-    box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+    text-align: center;
+    align-items: center;
     background-color: orange;
-    
 }
 
+.Resposta:focus {
+    outline: 0;
+}
+.Resposta:hover {
+    cursor: pointer;
+}
 
 .option{
  background-color: #e0e0e0;
