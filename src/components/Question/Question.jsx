@@ -62,6 +62,7 @@ export function Question({questionTitle,index,editandoQuestao ,editarQuestao, id
             <div className="Respostas">
 
               <select className={`Resposta${resposta}`} onChange={gaurdarRespota} value={resposta}>
+              <option className='option' value=""> escolha a opção</option>
                 <option className='option' value="NaoSeAplica"> Não se aplica</option>
                 <option className='option' value="NaoConforme">Não conforme</option>
                 <option className='option' value="Ok">OK</option>
