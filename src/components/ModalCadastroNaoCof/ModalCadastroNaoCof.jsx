@@ -1,21 +1,21 @@
 import { Modal as ModalComponent, Button } from "antd"
+import { useModalContext } from "../../Context"
 import  'antd/dist/antd.min.css'
-import { useModalContextNaoConformidade } from "./ModalCadastroNaoCof.context"
 
 export function ModalCadastroNaoCof(){
 
-    const {modalVisibleNaoConformidade, openModal, closeModal} = useModalContextNaoConformidade()
+    const {modalVisibleNaoConformidade,  openModalNaoConformidade, closeModalNaoConformidade} = useModalContext()
 
     const abrirModal =()=>{ 
         console.log(modalVisibleNaoConformidade)
-        openModal()
+        openModalNaoConformidade()
         
         }
 
     return(
         <>
           
-            <ModalComponent onCancel={closeModal} onOk={closeModal}  visible={modalVisibleNaoConformidade.visible}>
+            <ModalComponent onCancel={closeModalNaoConformidade} onOk={closeModalNaoConformidade}  visible={modalVisibleNaoConformidade.visible}>
                 <form>
                     <input type="TITULO:"/>
                     <input type="email" name="Responsável:"/>
