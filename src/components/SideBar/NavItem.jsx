@@ -37,9 +37,10 @@ export default function NavItem({ icon, title, description, active, navSize }) {
                 <MenuList
                     py={0}
                     border="none"
-                    w={200}
-                    h={200}
+                    w={0}
+                    h={0}
                     ml={5}
+                    backgroundColor="trasparent"
                 >
                     <NavHoverBox title={title} icon={icon} description={description} />
                 </MenuList>

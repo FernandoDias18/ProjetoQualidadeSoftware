@@ -29,6 +29,7 @@ export default function NavHoverBox({ title, icon, description }) {
                 borderRadius="10px"
                 color="#fff"
                 textAlign="center"
+                
             >
                 <Icon as={icon} fontSize="3xl" mb={4} />
                 <Heading size="md" fontWeight="normal">{title}</Heading>
