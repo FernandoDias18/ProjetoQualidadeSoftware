@@ -45,8 +45,9 @@ export function List(){
         <div className='container-list'>
             <div className='inputs'>
                 <input type="text" className='itens' placeholder="Descreva o item" onChange={handleNewQuestion} value={question}/>
-                <button onClick={handleCreateNewQuestions} >Adicionar</button>
+                <button className='testeButton' onClick={handleCreateNewQuestions} >Adicionar</button>
             </div>
+            
             <div className='Question-list'>
                 {
                     questions.map((question, index)=>{

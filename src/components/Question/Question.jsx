@@ -1,30 +1,36 @@
-
+import {useState} from 'react'
 import './Question.css'
 export function Question({questionTitle,index}){
+
+  const [resposta, setResposta] = useState('')
+
+  const gaurdarRespota =(event) =>{
+    setResposta(resposta => event.target.value)
+    console.log(resposta)
+
+  }
+
+
     return(
         <>
           <div className="container-question">
               <span className='id-Question'>id</span>
               <span className='Question-title'>{questionTitle}</span>
-              <div class="form-group">
-                  
-                
-                    
-                <label required="" className="radio-inline" for="radios-0" >
-                  <input name="resposta" id="resposta" value="sim" type="radio" required/>
-                  Sim
-                </label> 
-                <label for="radios-1" className="radio-inline">
-                  <input name="resposta" id="resposta" value="não" type="radio"/>
-                  Não
-                </label>
-                <label for="radios-0" className="radio-inline">
-                  <input name="resposta" id="resposta" value="não se aplica" type="radio"/>
-                  Não se aplica
-                </label>
-                    
-                 
-              </div>  
+              
+            <div className="Respostas">
+
+              
+
+
+
+              <select className={`Resposta${resposta}`} onChange={gaurdarRespota} value={resposta}>
+                <option className='option' value="NaoSeAplica"> Não se aplica</option>
+                <option className='option' value="NaoConforme">Não conforme</option>
+                <option className='option' value="Ok">OK</option>
+              </select>
+                                                  
+            </div> 
+             
           </div>
         </>
     )
