@@ -8,7 +8,7 @@ import{ModalProviderNaoConformidade} from './components/ModalCadastroNaoCof/Moda
 import './App.css'
 import { Modal } from "./components/ModalNaoConformidade/Modal";
 import { Calendario } from "./components/Calendario/Calendario";
-
+import { Dashboard } from "./components/Dashboard/Dashboard";
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
           <Modal/>
 
           <Calendario/>
+          <Dashboard/>
 
           <ModalCadastroNaoCof/>
         </ModalProvider>
