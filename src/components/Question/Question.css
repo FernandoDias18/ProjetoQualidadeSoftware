@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     height: auto;
-    background-color: #e0e0e0;
+    background-color: #AEC8CA;
     margin-bottom: 5px;
     align-items: center;
     justify-content: space-between;
@@ -15,9 +15,12 @@
     font-weight: 520;
     color: #343434;
     padding: 15px 0;
+    margin-left: 40px;
+    margin-right: 20px;
+    max-width: 90%;
 }
 .container-question:hover{
-    background-color: #cfcece;
+    background-color: #97b7b9;
 
 }
 .id-Question{
@@ -82,7 +85,7 @@
     border-radius: 5px;
     padding: 5px;
     box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
-    background-color: green;
+    background-color: rgb(53, 148, 53);
     
 }
 .Resposta{
@@ -103,4 +106,24 @@
 
 .option{
  background-color: #e0e0e0;
+}
+
+.Input-edition{
+    
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    
+  
+    
+}
+.container-input-edition{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    
+}
+.Button-confirm-edition{
+    color: rgb(53, 148, 53);
+    margin-left: 0.7%;
 }
