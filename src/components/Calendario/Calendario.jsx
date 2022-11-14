@@ -66,16 +66,5 @@ export function Calendario() {
 
 
 
-//const events = [
- //   { titulo:"",
-//    responsavel:"",
- //   mitigacao:"", 
- //   classificacao:"",
-  //  dataParaResolucao: "",
- //   dataDeEnvio: "", 
-  //  escalonada:"", 
-  //  superiorImediato: "", 
-  //  concluida:"",
- //   },
-  //  ];
+
 
