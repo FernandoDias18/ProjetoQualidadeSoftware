@@ -9,8 +9,9 @@ import {Flex} from '@chakra-ui/react'
 import SideBar from './components/SideBar/SideBar';
 
 import './App.css'
-// import { Modal } from "./components/ModalNaoConformidade/Modal";
-// import { Calendario } from "./components/Calendario/Calendario";
+import { Modal } from "./components/ModalNaoConformidade/Modal";
+import { Calendario } from "./components/Calendario/Calendario";
+import { Dashboard } from "./components/Dashboard/Dashboard";
 
 
 
@@ -18,6 +19,7 @@ function App() {
 
   return (
         <>
+
         
           <Flex >
             <SideBar Flex={1}/>
