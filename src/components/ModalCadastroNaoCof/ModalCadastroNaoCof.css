@@ -79,13 +79,9 @@
     color: white;
     font-weight: bolder;
     border-radius: 10px;
-    width: 200px;
+    width: 20%;
     margin-left: 43%;
     margin-top: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 .ant-btn.ant-btn-primary:hover{
