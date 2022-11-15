@@ -1,8 +1,8 @@
 import { Header } from "./components/Header/Header";
 
 import {List} from "./components/List/List"
-// import { ModalProvider } from "./Context";
-// import {ModalCadastroNaoCof} from './components/ModalCadastroNaoCof/ModalCadastroNaoCof.jsx'
+import { ModalProvider } from "./Context";
+import {ModalCadastroNaoCof} from './components/ModalCadastroNaoCof/ModalCadastroNaoCof.jsx'
 
 
 import {Flex} from '@chakra-ui/react'
@@ -20,14 +20,15 @@ function App() {
   return (
         <>
 
-        
+        <ModalProvider>
           <Flex >
             <SideBar Flex={1}/>
             <Flex  w={"100%"} flexDir="column">
               <Header/>
-              <List/>
+              <ModalCadastroNaoCof/>
             </Flex>
           </Flex>
+        </ModalProvider>
         
         </>
   );

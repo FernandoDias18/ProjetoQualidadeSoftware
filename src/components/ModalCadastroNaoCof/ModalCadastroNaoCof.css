@@ -1,0 +1,92 @@
+#superior, #titulo, #responsavel, #classificacao, #mitigacao, #dataEnvio, #dataResolucao{
+    width: 50%;
+    height: 30px;
+    border-radius: 20px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #626262;
+    padding-left: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    font-weight: 500;
+    border: #626262;
+    margin: 10px;
+   
+}
+
+.container{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.select{
+    width: 50%;
+    margin: 10px;
+    border: 0 !important;  /*Removes border*/
+    -webkit-appearance: none;  /*Removes default chrome and safari style*/
+    -moz-appearance: none; /* Removes Default Firefox style*/
+    text-indent: 0.01px; /* Removes default arrow from firefox*/
+    text-overflow: "";
+    color: rgb(247, 247, 247);
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+    background-color: #D8FFDB;
+    color: #023535;
+    font-weight: bolder;
+}
+.option{
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: #D8FFDB;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    font-weight: 500;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 520;
+    color: #023535;
+    padding: 15px 0;
+    margin-left: 40px;
+    margin-right: 20px;
+    max-width: 90%;
+    overflow: hidden;
+    font-weight: bolder;
+}
+
+.ant-modal-content{
+    border-radius: 20px;
+}
+.ant-btn.ant-btn-default{
+    background-color: rgb(182, 49, 49);
+    color: white;
+    font-weight: bolder;
+    border-radius: 10px;
+    width: 20%;
+    margin-right: 8px;
+;}
+.ant-btn.ant-btn-primary{
+    background-color:#026873;
+    color: white;
+    font-weight: bolder;
+    border-radius: 10px;
+    width: 20%;
+}
+
+.ant-btn.ant-btn-primary:hover{
+    background-color:#0496a7;
+    cursor: pointer;
+}
+.ant-btn.ant-btn-default:hover{
+    background-color: rgb(230, 62, 62);
+    cursor: pointer;
+}
