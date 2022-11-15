@@ -79,7 +79,7 @@ export function ModalCadastroNaoCof(){
                     
             </ModalComponent>
             
-            <Button onClick={abrirModal} type="primary"> cadastro de não conformidade</Button>
+            <Button onClick={abrirModal} type="primary"> Cadastrar não conformidade</Button>
 
         </>
     )
