@@ -10,6 +10,7 @@ export function List(){
 
 
     const [question, setQuestion] = useState('')
+    const [id, setIdQuestion] = useState('')
     const[questions, setQuestions]=useState([])
     const [editandoQuestao, setEditandoQuestao] = useState(null)
     const [editandoQuestaoValor, seteditandoQuestaoValor] = useState('')

@@ -25,7 +25,6 @@ export function Question({questionTitle,index,editandoQuestao ,editarQuestao, id
 
   const gaurdarRespota =(event) =>{
     setResposta(resposta => event.target.value)
-    console.log(resposta)
 
   }
 

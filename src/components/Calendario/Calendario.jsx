@@ -24,7 +24,7 @@ const localizer = dateFnsLocalizer({
 
 
 
-export function Calendario() {
+export function Calendario({openModal}) {
 
  
  const {allEvents} = useModalContext()
@@ -39,7 +39,7 @@ export function Calendario() {
                 startAccessor="start" 
                 endAccessor="end" 
                 style={{ height: 500, margin: "50px" }} 
-                // onSelectEvent={(event) => handleSelectedEvent(event)}
+                onSelectEvent={(event) => openModal(event)}
             />
         </div>
     );
