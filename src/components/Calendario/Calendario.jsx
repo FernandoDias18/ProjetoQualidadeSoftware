@@ -2,10 +2,10 @@ import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
-import React, { useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
+import { useModalContext } from "../../Context";
 import "./Calendar.css";
 
 
@@ -20,32 +20,14 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
-const events = [
-    {
-        title: "Big Meeting",
-        allDay: true,
-        start: new Date(2021, 6, 0),
-        end: new Date(2021, 6, 0),
-    },
-    {
-        title: "Vacation",
-        start: new Date(2021, 6, 7),
-        end: new Date(2021, 6, 10),
-    },
-    {
-        title: "Conference",
-        start: new Date(2021, 6, 20),
-        end: new Date(2021, 6, 23),
-    },
-];
+
 
 
 
 export function Calendario() {
 
-    const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-    const [allEvents, setAllEvents] = useState(events);
-
+ 
+ const {allEvents} = useModalContext()
     
 
     return (
@@ -57,6 +39,7 @@ export function Calendario() {
                 startAccessor="start" 
                 endAccessor="end" 
                 style={{ height: 500, margin: "50px" }} 
+                // onSelectEvent={(event) => handleSelectedEvent(event)}
             />
         </div>
     );
