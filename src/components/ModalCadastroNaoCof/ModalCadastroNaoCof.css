@@ -80,6 +80,8 @@
     font-weight: bolder;
     border-radius: 10px;
     width: 20%;
+    margin-left: 43%;
+    margin-top: 1%;
 }
 
 .ant-btn.ant-btn-primary:hover{
