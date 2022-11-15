@@ -96,8 +96,6 @@ function App() {
               /> */}
               <Calendario
               openModal = {}>
-                
-
               </Calendario>
             </Flex>
          

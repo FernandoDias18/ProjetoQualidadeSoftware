@@ -2,8 +2,9 @@ import { Modal as ModalComponent, Button } from "antd"
 import  'antd/dist/antd.min.css'
 import { useState } from "react"
 import { useModalContext } from "../../Context"
+import "./Modal.css"
 
-export function Modal({id, titulo, mitigacao, classificacao, dataResolucao, dataEnvio, escalonada, superior, concluida, pegarNaoConformidade}){
+export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataResolucao, dataEnvio, escalonada, superior, concluida, pegarNaoConformidade}){
 
     const {modalVisible, closeModal, openModal} = useModalContext()
     const [variavelId, setVariavelId] = useState("18")
@@ -16,15 +17,87 @@ export function Modal({id, titulo, mitigacao, classificacao, dataResolucao, data
     return(
         <>
             <ModalComponent onCancel={closeModal} onOk={closeModal} visible={modalVisible.visible}>
-             <h1>ID : {id}</h1>
-             <p>Responsável: {titulo}</p>
-             <p>Mitigação: {mitigacao}</p>
-             <p>Classifição: {classificacao} </p>
-             <p>Data para resolução: {dataResolucao} </p>
-             <p>Data de envio: {dataEnvio} </p>
-             <p>Escalonada: {escalonada}</p>
-             <p>Superior Imediato: {superior} </p>
-             <p>Concluída: {concluida} </p>
+             <div  className="divCard">
+                <span  className="tituloCard">
+                        ID:
+                </span>
+                <span>
+                        {id}
+                </span>
+            </div>
+            <div className="divCard">
+                <span  className="tituloCard">
+                        TITULO:
+                </span>
+                <span>
+                        {titulo}
+                </span>
+            </div>
+            <div className="divCard">
+                <span   className="tituloCard"> 
+                        RESPONSÁVEL:
+                </span>
+                <span>
+                        {responsavel}
+                </span>
+            </div >
+            <div className="divCard">
+                <span   className="tituloCard">
+                        MITIGAÇÃO:
+                </span>
+                <span>
+                        {mitigacao}
+                </span>
+            </div>
+            <div className="divCard">
+                <span   className="tituloCard">
+                        CLASSIFICAÇÃO:
+                </span>
+                <span>
+                        {classificacao}
+                </span>
+            </div>
+            <div className="divCard">
+                <span   className="tituloCard">
+                        DATA PARA RESOLUÇÃO:
+                </span>
+                <span>
+                        {dataResolucao}
+                </span>
+            </div>
+            <div className="divCard">
+                <span   className="tituloCard">
+                        DATA PARA ENVIO:
+                </span>
+                <span>
+                        {dataEnvio}
+                </span>
+            </div>
+            <div className="divCard">
+                <span   className="tituloCard">
+                        ESCALONADA:
+                </span>
+                <span>
+                        {escalonada}
+                </span>
+            </div>
+            <div className="divCard">
+                <span   className="tituloCard">
+                        SUPERIOR:
+                </span>
+                <span>
+                        {superior}
+                </span>
+            </div>
+            <div className="divCard">
+                <span  className="tituloCard">
+                        CONCLUÍDA:
+                </span>
+                <span>
+                        {concluida}
+                </span>
+            </div>
+           
             </ModalComponent>
             
             <Button onClick={(e)=>{  abrirModal(variavelId, e)} } type="primary"> Fer Perfeição</Button>
