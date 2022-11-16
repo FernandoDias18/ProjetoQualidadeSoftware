@@ -4,10 +4,11 @@ import { useState } from "react"
 import { useModalContext } from "../../Context"
 import "./Modal.css"
 
-export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataResolucao, dataEnvio, escalonada, superior, concluida, pegarNaoConformidade}){
+export function Modal(){
 
-    const {modalVisible, closeModal, openModal} = useModalContext()
-    const [variavelId, setVariavelId] = useState("18")
+    const {modalVisible, closeModal, openModal, naoConformidade, pegarNaoConformidade} = useModalContext()
+    const [variavelId, setVariavelId] = useState("15")
+    
     const abrirModal =(id, e)=>{ 
         console.log(e.target)
         pegarNaoConformidade(id)
@@ -19,10 +20,10 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
             <ModalComponent onCancel={closeModal} onOk={closeModal} visible={modalVisible.visible}>
              <div  className="divCard">
                 <span  className="tituloCard">
-                        ID:
+                        ID: 
                 </span>
                 <span>
-                        {id}
+                        {naoConformidade.id}
                 </span>
             </div>
             <div className="divCard">
@@ -30,7 +31,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         TITULO:
                 </span>
                 <span>
-                        {titulo}
+                        {naoConformidade.titulo}
                 </span>
             </div>
             <div className="divCard">
@@ -38,7 +39,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         RESPONSÁVEL:
                 </span>
                 <span>
-                        {responsavel}
+                        {naoConformidade.responsavel}
                 </span>
             </div >
             <div className="divCard">
@@ -46,7 +47,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         MITIGAÇÃO:
                 </span>
                 <span>
-                        {mitigacao}
+                        {naoConformidade.mitigacao}
                 </span>
             </div>
             <div className="divCard">
@@ -54,7 +55,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         CLASSIFICAÇÃO:
                 </span>
                 <span>
-                        {classificacao}
+                        {naoConformidade.classificacao}
                 </span>
             </div>
             <div className="divCard">
@@ -62,7 +63,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         DATA PARA RESOLUÇÃO:
                 </span>
                 <span>
-                        {dataResolucao}
+                        {naoConformidade.dataResolucao}
                 </span>
             </div>
             <div className="divCard">
@@ -70,7 +71,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         DATA PARA ENVIO:
                 </span>
                 <span>
-                        {dataEnvio}
+                        {naoConformidade.dataEnvio}
                 </span>
             </div>
             <div className="divCard">
@@ -78,7 +79,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         ESCALONADA:
                 </span>
                 <span>
-                        {escalonada}
+                        {naoConformidade.escalonada}
                 </span>
             </div>
             <div className="divCard">
@@ -86,7 +87,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         SUPERIOR:
                 </span>
                 <span>
-                        {superior}
+                        {naoConformidade.superior}
                 </span>
             </div>
             <div className="divCard">
@@ -94,7 +95,7 @@ export function Modal({id, titulo,responsavel, mitigacao, classificacao, dataRes
                         CONCLUÍDA:
                 </span>
                 <span>
-                        {concluida}
+                        {naoConformidade.concluida}
                 </span>
             </div>
            

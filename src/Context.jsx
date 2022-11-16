@@ -23,10 +23,45 @@ const events = [
     },
 ];
 
-const naoConformidades=[
+const arrayNaoConformidade =[
 
-]
-
+    { ID: "18",
+      titulo:"REQ",
+    responsavel:"FER O MAIS LINDO",
+    mitigacao:"MELHORAR NÉ", 
+    classificacao:"DIFICIL PORÉM DEPENDE",
+    dataParaResolucao: "AMANHÃ",
+    dataDeEnvio: "HOJE", 
+    escalonada:"SIM, PARA O INFERNO", 
+    superiorImediato: "DEMONIO", 
+    concluida:"NEM PERTO DE ACABAR",
+    },
+    { ID:"15", 
+    titulo:"Conformidade",
+    responsavel:"A gatinha da giulia",
+    mitigacao:"Ferias", 
+    classificacao:"top",
+    dataParaResolucao: "21/11/2022",
+    dataDeEnvio: "15/11/2022", 
+    escalonada:"nao", 
+    superiorImediato: "keliBrito", 
+    concluida:"nao ne mo",
+    },
+    { 
+    ID:"457484",
+    titulo:"NãoConformidade3",
+    responsavel:"André Delfino",
+    mitigacao:"Testar func", 
+    classificacao:"media",
+    dataParaResolucao: "12/12/2022",
+    dataDeEnvio: "15/11/2022", 
+    escalonada:"não", 
+    superiorImediato: "Fer", 
+    concluida:"não",
+    },
+    
+  
+  ]
 
 
 const ModalContext = createContext({})
@@ -34,33 +69,40 @@ const ModalContext = createContext({})
 export const ModalProvider = ({children}) =>{
 
     const [modalVisible, setModalVisible] = useState({visible: false})
+
+     //Não conformidades exibir as cadastradas
+     const [naoConformidade, setNaoConformidade]= useState({})
+
+    function pegarNaoConformidade(id){
+        const [nConformdiade] =  arrayNaoConformidade.filter( item => item.ID === id)
+        console.log(nConformdiade)
+        
+        setNaoConformidade(nConformdiade)
+
+        
+    }
+
+
+    //  Cadastro de não conformidade
     const [modalVisibleNaoConformidade, setModalVisibleNaoConformidade] = useState({visible:false})
+     //Essas são as funcões para abrir e fechar o modal de não conformidade para a criação da tabela de não conformidades
+     const openModalNaoConformidade = (payload)=> setModalVisibleNaoConformidade({...payload, visible:true})
+     const closeModalNaoConformidade = ()=> setModalVisibleNaoConformidade({visible:false})
+
+   
 
     //Eventos do Calendario
 
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
     const [allEvents, setAllEvents] = useState(events);
 
-    //Não conformiades:
-    const [naoConformidade, setNaoConformidade]= useState({ titulo:"",
-    responsavel:"",
-    mitigacao:"", 
-    classificacao:"",
-    dataParaResolucao: "",
-    dataDeEnvio: "", 
-    escalonada:"", 
-    superiorImediato: "", 
-    concluida:"",
-    },)
-    const [todasNaoConformidades, setTodasNaoConformidades] = useState(naoConformidades)
+   
 
     //Essas são as funcões para abrir e fechar o modal de não conformidade do calendario
     const openModal = (payload)=> setModalVisible({...payload, visible:true})
     const closeModal = ()=> setModalVisible({visible:false})
 
-    //Essas são as funcões para abrir e fechar o modal de não conformidade para a criação da tabela de não conformidades
-    const openModalNaoConformidade = (payload)=> setModalVisibleNaoConformidade({...payload, visible:true})
-    const closeModalNaoConformidade = ()=> setModalVisibleNaoConformidade({visible:false})
+   
 
 
 
@@ -73,13 +115,15 @@ export const ModalProvider = ({children}) =>{
     //     $("#calendar-event-modal").modal("show");
     //   };
 
-    
-    //função cadastrar não conformidade
-    function cadastrarNovaNaoConformidade(objeto){
-        setNaoConformidade(objeto)
 
+
+    function cadastrarNaoConformidade(naoConformidade){
+
+        arrayNaoConformidade.push(naoConformidade)
+
+        console.log(arrayNaoConformidade)
     }
-
+ 
     return  <ModalContext.Provider value=
                 {
                     {
@@ -91,11 +135,13 @@ export const ModalProvider = ({children}) =>{
                         closeModalNaoConformidade,
                         newEvent,
                         allEvents,
-                        
-                        setNaoConformidade,
-                        setTodasNaoConformidades,
+
                         naoConformidade,
-                        cadastrarNovaNaoConformidade
+                        pegarNaoConformidade,
+
+                        cadastrarNaoConformidade
+                        
+                        
                     }
                 }
             > 
