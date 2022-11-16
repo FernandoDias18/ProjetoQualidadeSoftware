@@ -1,4 +1,5 @@
 import { Header } from "./components/Header/Header";
+import {useState,useEffect} from 'react'
 
 import {List} from "./components/List/List"
 import { ModalProvider } from "./Context";
@@ -17,6 +18,7 @@ import { Dashboard } from "./components/Dashboard/Dashboard";
 
 function App() {
 
+
   return (
         <>
 
@@ -26,7 +28,11 @@ function App() {
             <Flex  w={"100%"} flexDir="column">
               <Header/>
               <ModalCadastroNaoCof/>
+              <Modal/>
+              <Calendario />
+              
             </Flex>
+         
           </Flex>
         </ModalProvider>
         

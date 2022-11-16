@@ -1,7 +1,7 @@
 
 import { Question } from '../Question/Question';
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+
 
 import "./List.css"
 
@@ -10,6 +10,7 @@ export function List(){
 
 
     const [question, setQuestion] = useState('')
+    const [id, setIdQuestion] = useState('')
     const[questions, setQuestions]=useState([])
     const [editandoQuestao, setEditandoQuestao] = useState(null)
     const [editandoQuestaoValor, seteditandoQuestaoValor] = useState('')
@@ -44,7 +45,6 @@ export function List(){
         }
     
         const newQuestion= {
-          id: uuidv4(),
           description: question,
           yes: false,
           no:false,
