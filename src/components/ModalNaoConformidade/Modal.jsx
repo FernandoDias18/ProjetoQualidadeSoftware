@@ -9,11 +9,11 @@ export function Modal(){
     const {modalVisible, closeModal, openModal, naoConformidade, pegarNaoConformidade} = useModalContext()
     const [variavelId, setVariavelId] = useState("15")
     
-    const abrirModal =(id, e)=>{ 
-        console.log(e.target)
-        pegarNaoConformidade(id)
-        openModal()
-        }
+//     const abrirModal =(id, e)=>{ 
+//         console.log(e.target)
+//         pegarNaoConformidade(id)
+//         openModal()
+//         }
 
     return(
         <>
@@ -23,7 +23,7 @@ export function Modal(){
                         ID: 
                 </span>
                 <span>
-                        {naoConformidade.id}
+                        {naoConformidade.ID}
                 </span>
             </div>
             <div className="divCard">
@@ -31,7 +31,7 @@ export function Modal(){
                         TITULO:
                 </span>
                 <span>
-                        {naoConformidade.titulo}
+                        {naoConformidade.title}
                 </span>
             </div>
             <div className="divCard">
@@ -101,7 +101,7 @@ export function Modal(){
            
             </ModalComponent>
             
-            <Button onClick={(e)=>{  abrirModal(variavelId, e)} } type="primary"> Fer Perfeição</Button>
+            {/* <Button onClick={(e)=>{  abrirModal(variavelId, e)} } type="primary"> Fer Perfeição</Button> */}
         
         </>
     )

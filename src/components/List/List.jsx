@@ -1,7 +1,7 @@
 
 import { Question } from '../Question/Question';
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+
 
 import "./List.css"
 
@@ -45,7 +45,6 @@ export function List(){
         }
     
         const newQuestion= {
-          id: uuidv4(),
           description: question,
           yes: false,
           no:false,

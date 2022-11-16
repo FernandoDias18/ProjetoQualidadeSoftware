@@ -24,28 +24,37 @@ const localizer = dateFnsLocalizer({
 
 
 
-export function Calendario({openModal}) {
+export function Calendario() {
 
+    const{arrayNaoConformidade,openModal,pegarNaoConformidade} = useModalContext()
  
- const {allEvents} = useModalContext()
+ 
+
+    const abrirModal =(evento)=>{
+        pegarNaoConformidade(evento.ID)
+        console.log(evento.ID)
+        openModal()
+        }
     
 
     return (
         <div className="Evento">
            
             <Calendar 
+               
                 localizer={localizer} 
-                events={allEvents} 
-                startAccessor="start" 
-                endAccessor="end" 
+                events={arrayNaoConformidade} 
+                startAccessor="dataResolucao" 
+                endAccessor="dataResolucao" 
                 style={{ height: 500, margin: "50px" }} 
-                onSelectEvent={(event) => openModal(event)}
+                onSelectEvent={(evento) => abrirModal(evento)}
             />
         </div>
     );
 
     
 }
+
 
 
 

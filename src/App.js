@@ -27,8 +27,9 @@ function App() {
             <SideBar Flex={1}/>
             <Flex  w={"100%"} flexDir="column">
               <Header/>
-              
               <ModalCadastroNaoCof/>
+              <Modal/>
+              <Calendario />
               
             </Flex>
          
