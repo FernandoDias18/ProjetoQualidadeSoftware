@@ -69,6 +69,8 @@
     align-items: center;
     background-color:#ff9e1e;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
 .RespostaNaoSeAplica:focus {
@@ -93,6 +95,8 @@
     background-color: rgb(255, 50, 50);
     text-shadow: none;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
 .RespostaNaoConforme:focus {
@@ -141,6 +145,8 @@
     align-items: center;
     background-color: #024059;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
 .Resposta:focus {
