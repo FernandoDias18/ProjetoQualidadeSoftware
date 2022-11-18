@@ -1,4 +1,4 @@
-import { createContext, useContext, useState} from "react"
+import { createContext, useContext, useState, useEffect} from "react"
 
 
 
@@ -67,6 +67,142 @@ const arrayNaoConformidade =[
 const ModalContext = createContext({})
 
 export const ModalProvider = ({children}) =>{
+
+
+    
+    
+    const[conforme, setConforme]= useState(0)
+    const[naoSeAplica, setNaoSeAplica]= useState(0)
+    const[naoConforme, setNaoConforme]= useState(0)
+    const[aderencia, setAderencia] = useState(0) 
+    
+    
+    
+    useEffect(() => {
+        handleCreateNewQuestions()
+      },[conforme,naoSeAplica,naoConforme])
+
+    function socorroDeus(questions){
+
+        
+        
+        // questions.forEach(data =>{
+
+        //     if(data.Resposta === "Ok"){
+        //       setConforme(conforme+1)
+        //     }
+        //     if (data.Resposta === "NaoSeAplica"){
+              
+        //         setNaoSeAplica(naoSeAplica+1)
+        //     }
+        //     if(data.Resposta === "NaoConforme"){
+        //         setNaoConforme(naoConforme+1)
+        //     }
+            
+        //   })
+
+        const conformeTeste = questions.reduce((total, element) => element.Resposta === "Ok" ? total + 1 : total + 0, 0)
+
+        const naoSeAplicaTeste = questions.reduce((total, element) => element.Resposta === "NaoSeAplica" ? total + 1 : total + 0, 0)
+          
+        const naoConformeTeste = questions.reduce((total, element) => element.Resposta === "NaoConforme" ? total + 1 : total + 0, 0)
+      
+        setConforme(conformeTeste)
+        setNaoSeAplica(naoSeAplicaTeste)
+        setNaoConforme(naoConformeTeste)
+        setAderencia(parseFloat((conformeTeste * 100) / (questions.length - naoSeAplicaTeste)).toFixed(2))
+
+    }
+
+    
+
+
+    //Dashboard
+    
+    const [question, setQuestion] = useState('')
+    const [id, setIdQuestion] = useState('')
+    const[questions, setQuestions]=useState([])
+    const [editandoQuestao, setEditandoQuestao] = useState(null)
+    const [editandoQuestaoValor, seteditandoQuestaoValor] = useState('')
+
+
+
+   
+
+
+    function handleNewQuestion(event){
+        setQuestion(question => event.target.value)
+
+    }
+    function handleNewValueQuestion(event){
+        seteditandoQuestaoValor(editandoQuestaoValor => event.target.value)
+
+    }
+    
+    function handleSaveNewQuestion (){
+        
+        
+        const questionNew = questions.find(q => q.id === editandoQuestao)
+        if (!questionNew) {
+            return
+        }
+        questionNew.description = editandoQuestaoValor
+        setEditandoQuestao(null)
+    }
+
+    function handleCreateNewQuestions() {
+
+
+
+        if (question.length === 0) {
+          return
+        }
+    
+        const newQuestion= {
+          description: question,
+          Resposta:''
+    
+        }
+
+        
+    
+        setQuestions([...questions, newQuestion])
+        setQuestion('')
+    
+    
+      }
+      function handleCreateNewResponseQuestion(index, resposta) {
+
+
+
+        
+
+        const question = questions[index]
+    
+        question["Resposta"]= resposta
+
+
+        
+    
+        questions[index] = question
+
+        socorroDeus(questions)
+        
+    
+    
+      }
+
+    const handleEditingQuestion =(id)=>{
+        setEditandoQuestao(id)
+        
+        
+
+    }
+
+
+
+
+//======================================================== 
 
     const [modalVisible, setModalVisible] = useState({visible: false})
 
@@ -140,8 +276,30 @@ export const ModalProvider = ({children}) =>{
                         arrayNaoConformidade,
                         pegarNaoConformidade,
 
-                        cadastrarNaoConformidade
-                        
+                        cadastrarNaoConformidade,
+
+                        question,
+                        setQuestion,
+                        questions,
+                        setQuestions,
+                        editandoQuestao, 
+                        setEditandoQuestao,
+                        editandoQuestaoValor, 
+                        seteditandoQuestaoValor,
+
+                        handleNewQuestion,
+                        handleNewValueQuestion,
+                        handleSaveNewQuestion,
+                        handleEditingQuestion,
+                        handleCreateNewQuestions,
+                        handleCreateNewResponseQuestion,
+
+
+                         conforme,
+                         naoSeAplica,
+                         naoConforme,
+                         aderencia
+                         
                         
                     }
                 }

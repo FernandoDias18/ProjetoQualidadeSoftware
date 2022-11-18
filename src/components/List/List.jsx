@@ -4,66 +4,81 @@ import { useState } from 'react';
 
 
 import "./List.css"
+import { useModalContext } from '../../Context';
 
 export function List(){
 
 
+    const{
+        handleNewQuestion,
+        question,
+        handleCreateNewQuestions,
+        questions,
+        handleEditingQuestion,
+        editandoQuestao,
+        handleNewValueQuestion,
+        editandoQuestaoValor,
+        handleSaveNewQuestion
 
-    const [question, setQuestion] = useState('')
-    const [id, setIdQuestion] = useState('')
-    const[questions, setQuestions]=useState([])
-    const [editandoQuestao, setEditandoQuestao] = useState(null)
-    const [editandoQuestaoValor, seteditandoQuestaoValor] = useState('')
+    }= useModalContext()
+
+    // const [question, setQuestion] = useState('')
+    // const [id, setIdQuestion] = useState('')
+    // // const[questions, setQuestions]=useState([])
+    // const [editandoQuestao, setEditandoQuestao] = useState(null)
+    // const [editandoQuestaoValor, seteditandoQuestaoValor] = useState('')
 
 
-    function handleNewQuestion(event){
-        setQuestion(question => event.target.value)
 
-    }
-    function handleNewValueQuestion(event){
-        seteditandoQuestaoValor(editandoQuestaoValor => event.target.value)
+   
 
-    }
+
+    // function handleNewQuestion(event){
+    //     setQuestion(question => event.target.value)
+
+    // }
+    // function handleNewValueQuestion(event){
+    //     seteditandoQuestaoValor(editandoQuestaoValor => event.target.value)
+
+    // }
     
-    function handleSaveNewQuestion (){
+    // function handleSaveNewQuestion (){
         
         
-        const questionNew = questions.find(q => q.id === editandoQuestao)
-        if (!questionNew) {
-            return
-        }
-        questionNew.description = editandoQuestaoValor
-        setEditandoQuestao(null)
-    }
+    //     const questionNew = questions.find(q => q.id === editandoQuestao)
+    //     if (!questionNew) {
+    //         return
+    //     }
+    //     questionNew.description = editandoQuestaoValor
+    //     setEditandoQuestao(null)
+    // }
 
-    function handleCreateNewQuestions() {
+    // function handleCreateNewQuestions() {
 
 
 
-        if (question.length === 0) {
-          return
-        }
+    //     if (question.length === 0) {
+    //       return
+    //     }
     
-        const newQuestion= {
-          description: question,
-          yes: false,
-          no:false,
-          notAplicable:false
+    //     const newQuestion= {
+    //       description: question,
+    //       Resposata:null
     
-        }
+    //     }
     
-        setQuestions([...questions, newQuestion])
-        setQuestion('')
+    //     setQuestions([...questions, newQuestion])
+    //     setQuestion('')
     
     
-      }
+    //   }
 
-    const handleEditingQuestion =(id)=>{
-        setEditandoQuestao(id)
+    // const handleEditingQuestion =(id)=>{
+    //     setEditandoQuestao(id)
         
         
 
-    }
+    // }
     return(
         <div className='container-list'>
             <div className='inputs'>
