@@ -1,6 +1,7 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import './Question.css'
 import { GiConfirmed } from 'react-icons/gi'
+import { useModalContext } from "../../Context";
 
 
 
@@ -19,20 +20,45 @@ import { GiConfirmed } from 'react-icons/gi'
 
 
 
-export function Question({questionTitle,index,editandoQuestao ,editarQuestao, id,handleNewValueQuestion,editandoQuestaoValor, handleSaveNewQuestion}){
+export function Question({questionTitle,editandoQuestao, index,editarQuestao, id,handleNewValueQuestion,editandoQuestaoValor, handleSaveNewQuestion}){
 
-  const [resposta, setResposta] = useState('')
 
-  const gaurdarRespota =(event) =>{
-    setResposta(resposta => event.target.value)
+  const [respostaCheckList, setRespostaCheckList]= useState('')
+  const{openModalNaoConformidade, handleCreateNewResponseQuestion, questions}= useModalContext()
 
+
+  // useEffect(()=>{
+  //   test()
+  // }, [respostaCheckList])
+
+  function handleRespostaCheckList(event){
+
+
+    
+    setRespostaCheckList(event.target.value)
+    
+    handleCreateNewResponseQuestion(index,event.target.value)
+
+    
+    
+    
+
+      if (event.target.value=== "NaoConforme"){
+        openModalNaoConformidade()
+        
+      }
   }
+
+
+
+
+
 
 
     return(
         <>
           <div className="container-question">
-              <span className='id-Question'>id</span>
+              <span className='id-Question'>{index+1}</span>
               { id === editandoQuestao?
                 (
                   <div className='container-input-edition'>
@@ -60,7 +86,7 @@ export function Question({questionTitle,index,editandoQuestao ,editarQuestao, id
               
             <div className="Respostas">
 
-              <select className={`Resposta${resposta}`} onChange={gaurdarRespota} value={resposta}>
+              <select className={`Resposta${respostaCheckList}`} onChange={(e)=>handleRespostaCheckList(e)} >
               <option className='option' value=""> Escolha a opção</option>
                 <option className='option' value="NaoSeAplica"> Não se aplica</option>
                 <option className='option' value="NaoConforme">Não conforme</option>

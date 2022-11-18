@@ -9,11 +9,7 @@ export function Modal(){
     const {modalVisible, closeModal, openModal, naoConformidade, pegarNaoConformidade} = useModalContext()
     const [variavelId, setVariavelId] = useState("15")
     
-//     const abrirModal =(id, e)=>{ 
-//         console.log(e.target)
-//         pegarNaoConformidade(id)
-//         openModal()
-//         }
+// 
 
     return(
         <>
@@ -96,6 +92,14 @@ export function Modal(){
                 </span>
                 <span>
                         {naoConformidade.concluida}
+                </span>
+            </div>
+            <div className="divCard">
+                <span  className="tituloCard">
+                        Email:
+                </span>
+                <span>
+                        {naoConformidade.email}
                 </span>
             </div>
            

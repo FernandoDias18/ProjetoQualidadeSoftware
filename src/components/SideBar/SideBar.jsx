@@ -21,6 +21,7 @@ import NavItem from './NavItem'
 
 export default function SideBar() {
     const [navSize, changeNavSize] = useState("large")
+    
     return (
         <Flex
             pos="sticky"
@@ -43,13 +44,13 @@ export default function SideBar() {
                 as="nav"
                 
             >
-                <NavItem navSize={navSize} icon={FiHome} title="Dashboard" description="This is the description for the dashboard." />
-                <NavItem navSize={navSize} icon={FiCalendar} title="Calendar" active />
-                <NavItem navSize={navSize} icon={BsListCheck} title="Check-list" />
-                <NavItem navSize={navSize} icon={CgDanger} title="non-compliances" />
-                <NavItem navSize={navSize} icon={CgDanger} title="item" />
-                <NavItem navSize={navSize} icon={CgDanger} title="item" />
-                <NavItem navSize={navSize} icon={CgDanger} title="item" />
+                <NavItem navSize={navSize} icon={FiHome} title="Dashboard" active={false} />
+                <NavItem navSize={navSize} icon={FiCalendar} title="Calendario" active={false} />
+                <NavItem navSize={navSize} icon={BsListCheck} title="Check-list" active={false} />
+                <NavItem navSize={navSize} icon={CgDanger} title="non-compliances" active={false} />
+                <NavItem navSize={navSize} icon={CgDanger} title="item" active={false} />
+                <NavItem navSize={navSize} icon={CgDanger} title="item"  active={false}/>
+                <NavItem navSize={navSize} icon={CgDanger} title="item"  active={false}/>
             </Flex>
 
             <Flex
