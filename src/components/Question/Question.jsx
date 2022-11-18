@@ -86,7 +86,8 @@ export function Question({questionTitle,editandoQuestao, index,editarQuestao, id
               
             <div className="Respostas">
 
-              <select className={`Resposta${respostaCheckList}`} onChange={(e)=>handleRespostaCheckList(e)} >
+              <select className={`Resposta${respostaCheckList}`} onChange={(e)=>handleRespostaCheckList(e)} 
+              >
               <option className='option' value=""> Escolha a opção</option>
                 <option className='option' value="NaoSeAplica"> Não se aplica</option>
                 <option className='option' value="NaoConforme">Não conforme</option>
